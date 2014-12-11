@@ -1,11 +1,14 @@
-"""calc.py: A simple Python calculator."""
+"""calc.py: A simple python calculator"""
 import sys
 
 def add_all(nums):
 	return sum(nums)
 
 def multiply_all(nums):
-	return reduce(lambda a, b: a * b, nums)
+	return reduce (lambda a, b: a * b, nums)
+
+def diff_all(nums):
+	return reduce (lambda a, b: a - b, nums)
 
 def divide_all(nums):
 	return reduce(lambda a, b: a / b, nums)
@@ -16,14 +19,23 @@ if __name__ == '__main__':
 	nums = map(float, sys.argv[2:])
 	if command == 'add':
 		print(add_all(nums))
+	
 	elif command == 'multiply':
 		print(multiply_all(nums))
+
 	elif command == 'min':
-        	print(min(nums))
+		print(min(nums))
+
 	elif command == 'max':
-		print(max(nums))	
+		print(max(nums))
+	
 	elif command == 'divide':
 		print(divide_all(nums))
+
+	elif command == 'diff':
+                print(diff_all(nums))
 	else:
-		usage = "calc.py [add|multiply] NUM1 [NUM2 [NUM3 [...]]]"
+		usage = "calc.py [add|multiply] NUM1 [NUM2 [NUM3 [.....]]]"
 		print(usage)
+
+
